@@ -3,7 +3,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Ionicons } from "@expo/vector-icons";
 
 // Screens
 import Home from "./screens/Home";
@@ -21,9 +22,13 @@ import Rocket from "./screens/Rocket";
 import Ships from "./screens/Ships";
 import Ship from "./screens/Ship";
 
+import AppIntro from "./screens/AppIntro";
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [showApp, setShowApp] = useState(false);
+
   const [fontsLoaded] = useFonts({
     productsansregular: require("./assets/fonts/product-sans-regular.ttf"),
     productsansbold: require("./assets/fonts/product-sans-bold.ttf"),
@@ -44,49 +49,55 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <StatusBar style="light" backgroundColor="transparent" />
-      <Stack.Navigator
-        screenOptions={{
-          gestureEnabled: true,
-          gestureDirection: "vertical",
-          animation: "slide_from_right",
-          headerStyle: {
-            backgroundColor: "#34222e",
-          },
-          headerTintColor: "#fee9d7",
-          headerTitleStyle: {
-            fontFamily: "productsansbold",
-          },
-        }}
-      >
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen name="Crew" component={Crew} />
-        <Stack.Screen
-          name="CrewMember"
-          component={CrewMember}
-          options={{
-            headerTitle: "Crew Member",
-          }}
-        />
-        <Stack.Screen name="Dragons" component={Dragons} />
-        <Stack.Screen name="Dragon" component={Dragon} />
-        <Stack.Screen name="Landpads" component={Landpads} />
-        <Stack.Screen name="Landpad" component={Landpad} />
-        <Stack.Screen name="Launchpads" component={Launchpads} />
-        <Stack.Screen name="Launchpad" component={Launchpad} />
-        <Stack.Screen name="Roadster" component={Roadster} />
-        <Stack.Screen name="Rockets" component={Rockets} />
-        <Stack.Screen name="Rocket" component={Rocket} />
-        <Stack.Screen name="Ships" component={Ships} />
-        <Stack.Screen name="Ship" component={Ship} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      {showApp ? (
+        <NavigationContainer>
+          <StatusBar style="light" backgroundColor="transparent" />
+          <Stack.Navigator
+            screenOptions={{
+              gestureEnabled: true,
+              gestureDirection: "vertical",
+              animation: "slide_from_right",
+              headerStyle: {
+                backgroundColor: "#34222e",
+              },
+              headerTintColor: "#fee9d7",
+              headerTitleStyle: {
+                fontFamily: "productsansbold",
+              },
+            }}
+          >
+            <Stack.Screen
+              name="Home"
+              component={Home}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen name="Crew" component={Crew} />
+            <Stack.Screen
+              name="CrewMember"
+              component={CrewMember}
+              options={{
+                headerTitle: "Crew Member",
+              }}
+            />
+            <Stack.Screen name="Dragons" component={Dragons} />
+            <Stack.Screen name="Dragon" component={Dragon} />
+            <Stack.Screen name="Landpads" component={Landpads} />
+            <Stack.Screen name="Landpad" component={Landpad} />
+            <Stack.Screen name="Launchpads" component={Launchpads} />
+            <Stack.Screen name="Launchpad" component={Launchpad} />
+            <Stack.Screen name="Roadster" component={Roadster} />
+            <Stack.Screen name="Rockets" component={Rockets} />
+            <Stack.Screen name="Rocket" component={Rocket} />
+            <Stack.Screen name="Ships" component={Ships} />
+            <Stack.Screen name="Ship" component={Ship} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      ) : (
+        <AppIntro setShowApp={setShowApp} />
+      )}
+    </>
   );
 }
