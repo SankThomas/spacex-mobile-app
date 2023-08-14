@@ -17,7 +17,7 @@ export default function Roadster({ navigation }) {
 
   return (
     <ScrollView style={globals.container}>
-      <Text style={globals.heading}>{data.name}</Text>
+      <Text style={globals.heading}>Elon Musk's Tesla Roadster</Text>
 
       <View style={globals.cards}>
         {!data ? (
