@@ -10,7 +10,7 @@ import React from "react";
 import { globals } from "../styles/globals";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function CrewMember({ route, navigation }) {
+export default function Dragon({ route, navigation }) {
   return (
     <ScrollView style={globals.container}>
       <View>
