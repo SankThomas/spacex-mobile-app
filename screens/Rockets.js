@@ -16,7 +16,11 @@ export default function Rockets({ navigation }) {
   const [data] = useFetch("https://api.spacexdata.com/v4/rockets");
 
   return (
-    <ScrollView style={globals.container}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+      style={globals.container}
+    >
       <Text style={globals.heading}>Rockets</Text>
 
       <View style={globals.cards}>

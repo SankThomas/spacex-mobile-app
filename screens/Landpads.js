@@ -17,7 +17,11 @@ export default function Landpads({ navigation }) {
   const [data] = useFetch("https://api.spacexdata.com/v4/landpads");
 
   return (
-    <ScrollView style={globals.container}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+      style={globals.container}
+    >
       <Text style={globals.heading}>Landpads</Text>
 
       <View style={globals.cards}>

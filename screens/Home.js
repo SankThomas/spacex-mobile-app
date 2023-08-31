@@ -23,7 +23,11 @@ export default function Home({ navigation }) {
         style={styles.image}
       >
         <SafeAreaView />
-        <ScrollView style={[globals.container, styles.container]}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
+          style={[globals.container, styles.container]}
+        >
           <Text style={[globals.heading, styles.heading]}>
             The Home of everything Space X.
           </Text>

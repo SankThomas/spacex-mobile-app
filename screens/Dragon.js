@@ -12,11 +12,19 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Dragon({ route, navigation }) {
   return (
-    <ScrollView style={globals.container}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+      style={globals.container}
+    >
       <View>
         <Text style={globals.heading}>{route.params.name}</Text>
         <View style={globals.imageContainer}>
-          <ScrollView horizontal>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            horizontal
+          >
             {route.params.flickr_images.map((image, index) => (
               <Image
                 key={index}

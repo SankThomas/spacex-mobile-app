@@ -17,7 +17,11 @@ export default function Dragons({ navigation }) {
   const [data] = useFetch("https://api.spacexdata.com/v4/dragons");
 
   return (
-    <ScrollView style={globals.container}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+      style={globals.container}
+    >
       <Text style={globals.heading}>Dragons</Text>
 
       <View style={globals.cards}>

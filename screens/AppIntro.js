@@ -41,6 +41,8 @@ export default function AppIntro({ setShowApp }) {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fee9d7" }}>
       <StatusBar backgroundColor="transparent" />
       <ScrollView
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
         style={{ flex: 1 }}
         horizontal={true}
         scrollEventThrottle={16}

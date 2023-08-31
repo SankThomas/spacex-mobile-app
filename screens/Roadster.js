@@ -16,7 +16,11 @@ export default function Roadster({ navigation }) {
   const [data] = useFetch("https://api.spacexdata.com/v4/roadster");
 
   return (
-    <ScrollView style={globals.container}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+      style={globals.container}
+    >
       <Text style={globals.heading}>Elon Musk's Tesla Roadster</Text>
 
       <View style={globals.cards}>
@@ -25,7 +29,11 @@ export default function Roadster({ navigation }) {
         ) : (
           <View>
             <View style={globals.imageContainer}>
-              <ScrollView horizontal>
+              <ScrollView
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
+                horizontal
+              >
                 {data.flickr_images.map((image, index) => (
                   <Image
                     key={index}

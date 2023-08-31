@@ -16,7 +16,11 @@ export default function Ships({ navigation }) {
   const [data] = useFetch("https://api.spacexdata.com/v4/ships");
 
   return (
-    <ScrollView style={globals.container}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+      style={globals.container}
+    >
       <Text style={globals.heading}>Ships</Text>
 
       <View style={globals.cards}>

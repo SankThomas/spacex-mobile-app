@@ -12,7 +12,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Landpad({ route, navigation }) {
   return (
-    <ScrollView style={globals.container}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+      style={globals.container}
+    >
       <View>
         <Text style={globals.heading}>
           {route.params.full_name}, {route.params.name}

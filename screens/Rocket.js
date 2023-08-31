@@ -12,11 +12,19 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Rocket({ route, navigation }) {
   return (
-    <ScrollView style={globals.container}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+      style={globals.container}
+    >
       <View>
         <Text style={globals.heading}>{route.params.name}</Text>
 
-        <ScrollView horizontal>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
+          horizontal
+        >
           {route.params.flickr_images.map((image, index) => (
             <Image
               key={index}
